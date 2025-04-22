@@ -11,6 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class EmpleadoDTO {
 
+
     private long cedula;
     private String nombre;
     private String apellido;

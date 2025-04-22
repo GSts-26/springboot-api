@@ -5,6 +5,8 @@
 package com.diego.cafeteria.Models.Entities;
 
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,14 +29,18 @@ public class Producto {
     @ManyToOne()
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
-    private String imagen;
     private String Descripcion;
-    private double precio;
-    private int cantidad;
-    private int stock;
+    private BigDecimal precio;
+    private Long stock;
+    @Column(name = "stock_limite")
+    private int limite;
+    private String imagen;
 
-//    @ManyToMany()
-//    @JoinColumn(name = "id_ingrediente", nullable = false)
-//    private List<Ingrediente> IngredientesList = new ArrayList<>();
+    @JoinTable(name = "rel_products-ingredients",
+            joinColumns = @JoinColumn(name = "FK_productos", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "FK_ingredientes", nullable = false)
+    )
+    @ManyToMany()
+    private List<Ingrediente> IngredientesList = new ArrayList<>();
 
 }

@@ -23,10 +23,10 @@ public class Ingrediente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
-//    @ManyToMany(mappedBy = "IngredientesList ")
-//    private List<Producto> productos = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "IngredientesList ")
+    private List<Producto> productos = new ArrayList<>();
     private Long cantidad;
-    private String medida;
     private int calorias;
     private int carbohidratos;
     private int proteinas;

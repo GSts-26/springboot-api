@@ -19,12 +19,13 @@ import lombok.*;
 public class Cliente {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cedula;
     private String nombre;
+    @Column(name = "fecha_nacimiento", nullable = false)
     private Date fechaNacimiento;
     private String genero; 
     private Long telefono;
+    @Column(unique = true, nullable = false)
     private String email;
     private String direccion;
 

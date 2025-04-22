@@ -12,6 +12,7 @@ import lombok.*;
  *
  * @author diego
  */
+
 @Entity
 @Getter
 @Setter
@@ -24,7 +25,6 @@ import lombok.*;
 public class Empleado {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long cedula;
     String nombre;
     Date nacimiento;

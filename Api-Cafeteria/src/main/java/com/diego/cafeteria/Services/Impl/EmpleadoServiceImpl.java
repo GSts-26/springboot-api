@@ -3,6 +3,7 @@ package com.diego.cafeteria.Services.Impl;
 
 import com.diego.cafeteria.Models.Dto.EmpleadoDTO;
 import com.diego.cafeteria.Models.Dto.EmpleadoMapper;
+import com.diego.cafeteria.Models.Entities.Empleado;
 import com.diego.cafeteria.Services.EmpleadoServices;
 import java.util.List;
 import java.util.Optional;
@@ -37,7 +38,11 @@ public class EmpleadoServiceImpl implements EmpleadoServices{
 
     @Override
     public Optional<EmpleadoDTO> UpdateEmpleado(Long id, EmpleadoDTO empleadoDTO) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      Optional<Empleado> empleadobuscar = repository.findById(id);
+        empleadobuscar.ifPresent(empleado -> empleado
+                .setApellido(empleadoDTO.getApellido())
+                .setNombre(empleadoDTO.getNombre()));
+      return null;
     }
     
 }

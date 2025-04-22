@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 
-@Table(name = "empleado")
+@Table(name = "categoria")
 public class Categoria {
 
     @Id

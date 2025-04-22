@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.*;
  * @author Diego Rincon
  */
 
-@Controller
-@RestController("/api/empleado")
+
+@RestController()
+@RequestMapping("api/empleado")
 public class EmpleadoControler {
 
     @Autowired
     private EmpleadoServiceImpl service;
+
 
     /**
      * Lista todos los empleados de la base de datos.
@@ -52,7 +54,12 @@ public class EmpleadoControler {
         service.CreateEmpleado(empleadoDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body("empleado creado correctamenta");
     }
-    
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarEmpleado(@PathVariable long id, @RequestBody EmpleadoDTO empleadoDTO ){
+
+        return ResponseEntity.ok().build();
+    }
 // 
     
 } 
