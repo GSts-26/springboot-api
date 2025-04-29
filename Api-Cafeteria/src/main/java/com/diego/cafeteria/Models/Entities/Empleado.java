@@ -5,8 +5,10 @@
 package com.diego.cafeteria.Models.Entities;
 
 import jakarta.persistence.*;
-import java.util.Date;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  *
@@ -30,7 +32,10 @@ public class Empleado {
     Date nacimiento;
     String genero;
     long telefono;
+    @Column(unique=true)
     String email;
     String direccion;
     String apellido;
+    @CreationTimestamp
+    private Timestamp createdAt;
 }

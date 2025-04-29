@@ -4,7 +4,10 @@
  */
 package com.diego.cafeteria.Services;
 
-import com.diego.cafeteria.Models.Dto.EmpleadoDTO;
+import com.diego.cafeteria.Models.Dto.request.EmployeeRequest;
+
+import com.diego.cafeteria.Models.Dto.response.EmployeeResponse;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -14,11 +17,11 @@ import java.util.Optional;
  */
 public interface EmpleadoServices {
 
-    List<EmpleadoDTO> GetAllEmpleados();
+    List<EmployeeResponse> GetAllEmpleados();
 
-    Optional<EmpleadoDTO> GetEmpleadoById(Long id);
+    Optional<EmployeeResponse> GetEmpleadoById(Long id);
 
-    void CreateEmpleado(EmpleadoDTO empleadoDTO);
+    EmployeeResponse CreateEmpleado(EmployeeRequest empleadoDTO);
 
-    Optional<EmpleadoDTO> UpdateEmpleado(Long id, EmpleadoDTO empleadoDTO);
+    Optional<EmployeeResponse> UpdateEmpleado(Long id, EmployeeRequest request);
 }

@@ -28,7 +28,7 @@ public class Producto {
     private String nombre;
     @ManyToOne()
     @JoinColumn(name = "id_categoria", nullable = false)
-    private Categoria categoria;
+    private CategoryEntity categoria;
     private String Descripcion;
     private BigDecimal precio;
     private Long stock;
@@ -36,11 +36,11 @@ public class Producto {
     private int limite;
     private String imagen;
 
-    @JoinTable(name = "rel_products-ingredients",
-            joinColumns = @JoinColumn(name = "FK_productos", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "FK_ingredientes", nullable = false)
-    )
-    @ManyToMany()
-    private List<Ingrediente> IngredientesList = new ArrayList<>();
+//    @JoinTable(name = "rel_products-ingredients",
+//            joinColumns = @JoinColumn(name = "FK_productos", nullable = false),
+//            inverseJoinColumns = @JoinColumn(name = "FK_ingredientes", nullable = false)
+//    )
+//    @ManyToMany()
+//    private List<Ingrediente> IngredientesList = new ArrayList<>();
 
 }

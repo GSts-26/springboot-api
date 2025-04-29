@@ -1,15 +1,15 @@
-package com.diego.cafeteria.Models.Dto;
+package com.diego.cafeteria.Models.Dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmpleadoDTO {
+public class EmployeeResponse {
 
 
     private long cedula;

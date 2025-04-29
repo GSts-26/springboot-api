@@ -24,8 +24,8 @@ public class Ingrediente {
     private int id;
     private String nombre;
 
-    @ManyToMany(mappedBy = "IngredientesList ")
-    private List<Producto> productos = new ArrayList<>();
+//    @ManyToMany(mappedBy = "IngredientesList ")
+//    private List<Producto> productos = new ArrayList<>();
     private Long cantidad;
     private int calorias;
     private int carbohidratos;
